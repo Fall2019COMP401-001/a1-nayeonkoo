@@ -22,7 +22,7 @@ public class A1Novice {
 		//read in count of number of customers to process
 		
 		int count = scan.nextInt(); 
-		String[] Customers = new String[count];
+		double[] Customers = new double[count];
 		String[] firstName = new String[count];
 		String[] lastName = new String[count];
 		int[] itemsPerCust = new int[count];
@@ -65,7 +65,7 @@ public class A1Novice {
 		return temp1;
 	}
 	
-	static String[] totalCalc(int[] x, int[] y, double[] z) {
+	static double[] totalCalc(int[] x, int[] y, double[] z) {
 		double[] temp = new double[x.length];
 		int m = 0;
 		for (int j = 0; j<x.length; j++) {
@@ -74,10 +74,6 @@ public class A1Novice {
 			}
 			m += x[j];
 		}
-		String[] temp2 = new String[x.length];
-		for (int i = 0; i<x.length; i++) {
-			temp2[i] = String.format("%.2f", temp[i]);
-		}
-		return temp2;
+		return temp;
 	}
 }

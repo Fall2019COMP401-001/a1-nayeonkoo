@@ -74,7 +74,7 @@ public class A1Adept {
 		
 		System.out.println("Biggest: " + fullName[findValueMax(total)] + " (" + max + ")"); 
 		System.out.println("Smallest: " + fullName[findValueMin(total)] + " (" + min + ")"); 
-		System.out.println("Average: " + String.format("%.2f", ((double) sum) / ((double) count)));
+		System.out.println("Average: " + String.format("%.2f", ((double) sum) / ((double) countCust)));
 	}
 	
 	static int findValueMax(Double[] vals) {

@@ -68,13 +68,13 @@ public class A1Adept {
 		
 		scan.close();
 		
-		double avg = calculateAvg(total);
+		double sum = calculateSum(total);
 		double max = total[findValueMax(total)];
 		double min = total[findValueMin(total)];
 		
 		System.out.println("Biggest: " + fullName[findValueMax(total)] + " (" + max + ")"); 
 		System.out.println("Smallest: " + fullName[findValueMin(total)] + " (" + min + ")"); 
-		System.out.println("Average: " + avg);
+		System.out.println("Average: " + String.format("%.2f", ((double) sum) / ((double) count)));
 	}
 	
 	static int findValueMax(Double[] vals) {
@@ -116,7 +116,7 @@ public class A1Adept {
 		return temp;
 	}
 
-	static double calculateAvg(Double[] vals) {
+	static double calculateSum(Double[] vals) {
 		
 		double sum = 0;
 		
@@ -124,7 +124,7 @@ public class A1Adept {
 			sum += vals[i];
 		}
 		
-		return sum/vals.length;
+		return sum;
 	}
 	
 }

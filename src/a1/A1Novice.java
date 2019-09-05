@@ -12,21 +12,23 @@ public class A1Novice {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		//for each item bought, the input will contain
-			//an integer quantity of the item bought
-			//the name of the item (assume single word)
-			//price of the item as a double
-		//for each customer, program should print one line of output 
-		//F. LAST: TOTAL
-		
-		//read in count of number of customers to process
+		//read the number of customers
 		
 		int count = scan.nextInt(); 
+		
+		//use this array to store the total spent by each customer 
 		Double[] Customers = new Double[count];
+		
+		//store first names
 		String[] firstName = new String[count];
+		
+		//store last names
 		String[] lastName = new String[count];
+		
+		//store number of items bought by each customer
 		int[] itemsPerCust = new int[count];
 		
+		//read in the scanner and calculate the total spent by each customer
 		for (int i=0; i<Customers.length; i++) {
 			firstName[i] = scan.next();
 			lastName[i] = scan.next();
@@ -41,18 +43,24 @@ public class A1Novice {
 				cost[j] = scan.nextDouble();
 				m += numItem[j] * cost[j];
 			}
+			
 			Customers[i] = m;
 		}
 		
+		//done scanning
 		scan.close();
 		
+		//call on firstIni to change the first names to just the first initials
 		char[] firstInitials = firstIni(firstName);
-				
+		
+		//print output
 		for (int i=0; i<Customers.length; i++) {
 			System.out.println(firstInitials[i] + ". " + lastName[i] + ": " + String.format("%.2f", Customers[i]));
 		}
 	}
 	
+	
+	//modify an array of names. return an array of first initials 
 	static char[] firstIni(String[] firstName) {
 		String[] temp = firstName;
 		char[] temp1 = new char[temp.length];

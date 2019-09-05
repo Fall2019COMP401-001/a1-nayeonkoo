@@ -22,37 +22,34 @@ public class A1Novice {
 		//read in count of number of customers to process
 		
 		int count = scan.nextInt(); 
-		double[] Customers = new double[count];
+		Double[] Customers = new Double[count];
 		String[] firstName = new String[count];
 		String[] lastName = new String[count];
 		int[] itemsPerCust = new int[count];
-		LinkedList<Integer> numItem = new LinkedList<Integer>();
-		LinkedList<String> item = new LinkedList<String>();
-		LinkedList<Double> cost = new LinkedList<Double>();
 		
 		for (int i=0; i<Customers.length; i++) {
 			firstName[i] = scan.next();
 			lastName[i] = scan.next();
 			itemsPerCust[i] = scan.nextInt();
+			double m = 0;
+			int[] numItem = new int[itemsPerCust[i]];
+			String[] item = new String[itemsPerCust[i]];
+			double[] cost = new double[itemsPerCust[i]];
 			for (int j=0; j<itemsPerCust[i]; j++) {
-				numItem.add(scan.nextInt());
-				item.add(scan.next());
-				cost.add(scan.nextDouble());
+				numItem[j] = scan.nextInt();
+				item[j] = scan.next();
+				cost[j] = scan.nextDouble();
+				m += numItem[j] * cost[j];
 			}
+			Customers[i] = m;
 		}
 		
 		scan.close();
 		
-		int[] numItem2 = new int[numItem.size()];
-		String[] item2 = new String[item.size()];
-		double[] cost2 = new double[cost.size()];
-		
 		char[] firstInitials = firstIni(firstName);
-		
-		Customers = totalCalc(itemsPerCust, numItem2, cost2);
-		
+				
 		for (int i=0; i<Customers.length; i++) {
-			System.out.println(firstInitials[i] + ". " + lastName[i] + ": " + Customers[i]);
+			System.out.println(firstInitials[i] + ". " + lastName[i] + ": " + String.format("%.2f", Customers[i]));
 		}
 	}
 	
@@ -63,17 +60,5 @@ public class A1Novice {
 			temp1[i] = temp[i].charAt(0);
 		}
 		return temp1;
-	}
-	
-	static double[] totalCalc(int[] x, int[] y, double[] z) {
-		double[] temp = new double[x.length];
-		int m = 0;
-		for (int j = 0; j<x.length; j++) {
-			for (int i = 0; i<x[j]; i++) {
-				temp[j] += y[m + i] * z[m + i];
-			}
-			m += x[j];
-		}
-		return temp;
 	}
 }

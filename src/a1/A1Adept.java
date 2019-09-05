@@ -59,7 +59,7 @@ public class A1Adept {
 				String food = scan.next();
 				for (int c=0; c<items.length; c++) {
 					if (food.equals(items[c])) {
-						x += price[c] * b;
+						x += ((double) price[c] * (double) b);
 					}
 				}
 			}
@@ -72,8 +72,8 @@ public class A1Adept {
 		double max = total[findValueMax(total)];
 		double min = total[findValueMin(total)];
 		
-		System.out.println("Biggest: " + fullName[findValueMax(total)] + " (" + max + ")"); 
-		System.out.println("Smallest: " + fullName[findValueMin(total)] + " (" + min + ")"); 
+		System.out.println("Biggest: " + fullName[findValueMax(total)] + " (" + String.format("%.2f", max) + ")"); 
+		System.out.println("Smallest: " + fullName[findValueMin(total)] + " (" + String.format("%.2f", min) + ")"); 
 		System.out.println("Average: " + String.format("%.2f", ((double) sum) / ((double) countCust)));
 	}
 	

@@ -9,24 +9,24 @@ public class A1Example {
 		// you know what Eclipse thinks it is using and
 		// so that you can confirm that it is 10.0 or higher.
 		
-		System.out.println("Your Java version: " + System.getProperty("java.version"));
+		//System.out.println("Your Java version: " + System.getProperty("java.version"));
 		
 		// Set up scanner object to read space-separated values
-		// from console input
+		// from console input as different types of data 
 		
 		Scanner scan = new Scanner(System.in);
 
 		// Read in count of numbers to process
 		
-		int count = scan.nextInt();
+		int count = scan.nextInt(); 
 		
 		
-		// Create an array to store numbers.
+		// Create an array to store numbers.count = the number of integers that are scanned in
 		
 		int[] values = new int[count];
 		
 		
-		// Read values into the array
+		// Read values into the array. 
 		
 		for (int i=0; i<values.length; i++) {
 			values[i] = scan.nextInt();
@@ -59,7 +59,7 @@ public class A1Example {
 	 * Preconditions:
 	 * Input array must not be null.
 	 */
-	
+
 	static int calculateValueSum(int[] vals) {
 		
 		int sum = 0;

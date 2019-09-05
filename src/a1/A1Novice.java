@@ -67,13 +67,10 @@ public class A1Novice {
 	
 	static String[] totalCalc(int[] x, int[] y, double[] z) {
 		double[] temp = new double[x.length];
-		for (int t = 0; t<temp.length; t++) {
-			temp[t] = 0;
-		}
 		int m = 0;
 		for (int j = 0; j<x.length; j++) {
 			for (int i = 0; i<x[j]; i++) {
-				temp[j] += y[m + i] * y[m + i];
+				temp[j] += y[m + i] * z[m + i];
 			}
 			m += x[j];
 		}

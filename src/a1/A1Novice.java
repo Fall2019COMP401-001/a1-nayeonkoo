@@ -77,10 +77,10 @@ public class A1Novice {
 			}
 			m += x[j];
 		}
-		String[] temp2 = new String[x.length];
+		String[] temp3 = new String[x.length];
 		for (int i = 0; i<temp2.length; i++) {
-			temp2[i] = String.format("%.2f", temp[i]);
+			temp3[i] = String.format("%.2f", temp[i]);
 		}
-		return temp2;
+		return temp3;
 	}
 }
